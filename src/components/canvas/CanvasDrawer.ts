@@ -311,6 +311,10 @@ export class CanvasStack {
     const variables = this.stack.getVariables();
     const stackName = this.stack.name;
     for (const variable of variables) {
+      console.log('Var size');
+      const varSize = variable.getByteSize();
+      console.log(varSize);
+
       const value = variable.getValue();
       const isArrayVariable = Array.isArray(value);
       const canvasVariable = isArrayVariable
@@ -389,8 +393,12 @@ export class CanvasVariable {
     }
 
     const addressStr = `&${name}(0x${address.toString(16).toUpperCase()}) `;
+    const varBytes = variable.getByteSize();
+
     this.pushCell(type);
     this.pushCell(name);
+    this.pushCell(`${varBytes} bytes`);
+
     const valueCell = this.pushCell(valueStr);
     const addrCell = this.pushCell(addressStr);
     if (this.isTypePtr()) {

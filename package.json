@@ -107,7 +107,7 @@
     "tslint-loader": "3.5.4",
     "tslint-plugin-prettier": "2.3.0",
     "typescript": "3.9.7",
-    "unicoen.ts": "0.4.1",
+   "unicoen.ts": "0.4.1",
     "url-loader": "4.1.1",
     "vector2d": "3.0.0",
     "webpack": "4.44.2",
